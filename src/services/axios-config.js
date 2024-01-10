@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-let baseURL = "http://localhost:3005";
+let baseURL = "https://sst-backend.onrender.com";
+// let baseURL = "http://localhost:3005";
 
 const publicReq = axios.create({ baseURL });
 
