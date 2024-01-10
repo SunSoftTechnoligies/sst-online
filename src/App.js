@@ -19,7 +19,7 @@ import Interncollec from './collections/Interncollec';
 import UniversityTable from './table/Universitytable';
 import Interns from './admin/allintern/Interns';
 import Reports from './admin/reports/Reports';
-import Googlesignup from './Googlesignup';
+// import Googlesignup from './Googlesignup';
 
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
       <Route path='/table' element={<UniversityTable/>}/>
       <Route path='/admin/allinterns' element={<Interns/>}/>
       <Route path='/admin/allreports' element={<Reports/>}/>
-      <Route path='/googlesignup' element={<Googlesignup/>}/>
+      {/* <Route path='/googlesignup' element={<Googlesignup/>}/> */}
       <Route path='/admin/allreports' element={<Reports/>}/>
       </Routes>
     </Router>
