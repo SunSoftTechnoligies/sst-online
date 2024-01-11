@@ -220,13 +220,13 @@ function Profile() {
   
 
   return (
-    <div className="bg-gray-100">
+<div className="bg-gray-100">
       <div className="flex justify-center items-center">
-        <div className="bg-white p-8 rounded-lg w-108 max-w-screen-lg mt-3">
-          <form encType="multipart/form-data" className="grid grid-cols-12 gap-8">
+        <div className="bg-white p-4 rounded-lg w-full md:max-w-screen-lg mt-3"> {/* Adjusted max-width for larger screens */}
+          <form encType="multipart/form-data" className="grid grid-cols-12 gap-4 md:gap-8">
             {/* Left Side*/}
-            <div className="col-span-11 ml-9">
-              <div className="border-b border-gray-900/10 pb-12">
+            <div className="col-span-12 md:col-span-7 lg:col-span-8 xl:col-span-9 mb-4 md:mb-0"> {/* Adjusted column spans for different screen sizes */}
+              <div className="border-b border-gray-900/10 pb-6 md:pb-12">
                 <h2 className="text-2xl font-bold text-gray-700 mb-4 text-center">My Personal Information</h2>
                 <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                   {/* Email address */}
@@ -436,8 +436,8 @@ function Profile() {
             </div>
 
             {/* Right Side  */}
-            <div className="col-span-1 w-10">
-              <div className="flex flex-col items-center mt-16 mr-14 float-right">
+            <div className="col-span-12 md:col-span-5 lg:col-span-4 xl:col-span-3"> {/* Adjusted column spans for different screen sizes */}
+              <div className="flex flex-col items-center mt-8 md:mt-16 lg:mt-20"> 
                 {/* Avatar and Change button */}
                 <div className="col-span-1 w-10">
                   <div className="flex flex-col items-center  mr-14 float-right">
@@ -484,7 +484,7 @@ function Profile() {
             </div>
             {/* Save and Update Button */}
             <div className="col-span-12 flex justify-center items-center">
-              <div className="space-x-4">
+              <div className="space-y-4 md:space-y-0 md:space-x-4">
                 <button
                   className="inline-flex items-center rounded-md bg-gray-50 px-6 py-3 text-sm font-medium text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
                   onClick={doSaveProfile}
