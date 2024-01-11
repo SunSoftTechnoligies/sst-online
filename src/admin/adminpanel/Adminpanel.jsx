@@ -14,12 +14,12 @@ function Adminpanel() {
 
       <div className="flex flex-col md:flex-row justify-center items-center p-8 space-y-4 md:space-y-0 md:space-x-4">
         {/* Card 1: Intern Enrollment */}
-        <div className="flex-shrink-0 w-full md:w-1/3">
+        <div className="flex-shrink-0 w-full md:w-1/3 mb-4 md:mb-0 md:mr-4">
           <Enrollcard />
         </div>
 
         {/* Card 2: All Interns */}
-        <div className="flex-shrink-0 w-full md:w-1/3">
+        <div className="flex-shrink-0 w-full md:w-1/3 mb-4 md:mb-0 md:mr-4">
           <Allinterncard />
         </div>
 
