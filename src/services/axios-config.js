@@ -8,7 +8,7 @@ const publicReq = axios.create({ baseURL });
 const privateReq = axios.create({
     baseURL,
     withCredentials: true,
-    cors:true,
+    // cors:true,
 });
 
 const token = localStorage.getItem("token");
