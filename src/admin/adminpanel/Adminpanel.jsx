@@ -8,7 +8,7 @@ function Adminpanel() {
   const [isAdminLoggedIn, setAdminLoggedIn] = useState(false);
 
   return (
-    <div className="bg-gray-90 min-h-screen">
+    <div className="bg-gray-90 min-h-screen overflow-x-hidden">
       {/* Admin Panel Navbar */}
       <Adminpannav isAdminLoggedIn={isAdminLoggedIn} />
 

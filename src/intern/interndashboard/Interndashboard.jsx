@@ -5,7 +5,7 @@ import Reportingcard from './cards/Reportingcard';
 
 function Interndashboard() {
   return (
-    <div className="bg-gray-90 min-h-screen">
+    <div className="bg-gray-90 min-h-screen  overflow-x-hidden">
       {/* Navbar */}
       <Internnavbar />
 
