@@ -12,6 +12,7 @@ function MissionCards() {
       <h2 className="text-xl mb-2 text-center font-bold">OUR MISSION</h2>
       <p className="text-center">
         To establish ourselves as leaders in technology by creating value for our customers through quality products. We deliver our solutions with speed, integrity, and honesty.
+      abcd
       </p>
     </div>
   );
