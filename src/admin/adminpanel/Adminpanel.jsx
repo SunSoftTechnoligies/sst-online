@@ -5,12 +5,11 @@ import Allinterncard from './cards/Allinterncard';
 import Reportingcard from './cards/Reportingcard';
 
 function Adminpanel() {
-  const [isAdminLoggedIn, setAdminLoggedIn] = useState(false);
 
   return (
     <div className="bg-gray-90 min-h-screen overflow-x-hidden">
       {/* Admin Panel Navbar */}
-      <Adminpannav isAdminLoggedIn={isAdminLoggedIn} />
+      <Adminpannav />
 
       <div className="flex flex-col md:flex-row justify-center items-center p-8 space-y-4 md:space-y-0 md:space-x-4">
         {/* Card 1: Intern Enrollment */}

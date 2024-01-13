@@ -124,8 +124,8 @@ function Internenroll() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-200">
-<div className="flex items-center justify-center h-screen bg-gray-200">
+    <div className="flex items-center justify-center h-full bg-gray-200">
+<div className="flex items-center justify-center h-full bg-gray-200">
   <div className="bg-white p-8 rounded-md shadow-md w-100">
     <div className="flex items-center justify-center mb-4">
       <img
@@ -171,11 +171,11 @@ function Internenroll() {
                 />
               </div>
             </div>
-            <div className="w-1/2">
+            <div className="w-1/2 pl-5">
               <label htmlFor="enroll-date" className="block text-sm font-medium leading-6 text-gray-900">
                 Enroll Date
               </label>
-              <div className="flex mt-2 space-x-2">
+              <div className="flex mt-2 space-x-2 w-96">
                 <select
                   id="day"
                   name="enrollDate.day"
@@ -243,7 +243,7 @@ function Internenroll() {
               </div>
             </div>
 
-            <div className="w-1/2">
+            <div className="w-1/2 pl-3">
               <label htmlFor="duration" className="block text-sm font-medium leading-6 text-gray-900">
                 Duration
               </label>
@@ -289,7 +289,7 @@ function Internenroll() {
                 />
               </div>
             </div>
-            <div className="w-1/2">
+            <div className="w-1/2 pl-5">
               <label htmlFor="endDate" className="block text-sm font-medium leading-6 text-gray-900 mb-1.5">
                 End Date
               </label>
