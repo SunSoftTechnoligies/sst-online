@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Loginad from './admin/Loginad';
 import Adminpanel from './admin/adminpanel/Adminpanel';
@@ -20,7 +21,6 @@ import UniversityTable from './table/Universitytable';
 import Interns from './admin/allintern/Interns';
 import Reports from './admin/reports/Reports';
 // import Googlesignup from './Googlesignup';
-
 
 function App() {
   return (

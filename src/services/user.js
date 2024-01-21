@@ -1,6 +1,6 @@
 import { privateReq, publicReq } from "./axios-config";
 
-export const enrollService = (data) => privateReq.post("/admin/enroll-intern-process", data);
+export const enrollService = (data) => publicReq.post("/admin/enroll-intern-process", data);
 
 export const loginternService = (data) => privateReq.post("/intern/log-intern-process", data);
 
@@ -21,3 +21,4 @@ export const updateinterndataService=(data)=>privateReq.post("/intern/update-int
 export const getprofileService = (data) => privateReq.post("/collection/get-profile-collection", data);
 
 export const getinternService = (data) => privateReq.post("/collection/get-intern-collection", data);
+

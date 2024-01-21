@@ -21,7 +21,6 @@ function Loginintern() {
   const doLogIntern = async () => {
     const res = await loginternService(obj);
       alert(res.data.message);
-      document.cookie = 'intern_token=' + res.data.intern_token + '; path=/';
       localStorage.setItem('token', JSON.stringify(res.data.token));
       console.log("Token added to local storage")
       navigate('/intern/interndashboard');
