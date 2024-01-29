@@ -19,13 +19,27 @@ function Loginintern() {
   };
 
   const doLogIntern = async () => {
-    const res = await loginternService(obj);
+    try {
+      const res = await loginternService(obj);
+      if (res.status !== 200) throw new Error('Request failed with status code ' + res.status);
       alert(res.data.message);
-      localStorage.setItem('token', JSON.stringify(res.data.token));
-      console.log("Token added to local storage")
-      navigate('/intern/interndashboard');
+  
+      // Check the message in the response
+      if (res.data.message === 'Intern logged in successfully') {
+        localStorage.setItem('token', JSON.stringify(res.data.token));
+        console.log("Token added to local storage");
+        navigate('/intern/interndashboard');
+      } else if (res.data.message === 'Your internship period is over') {
+        console.log("Internship period is over");
+      }
+  
+    } catch (error) {
+      console.error('Error logging in:', error);
+      alert((error.response && error.response.data && error.response.data.message) || error.message);
+    }
   };
-
+  
+      
   const doForgotPassword = async () => {
     const res = await forgotpasswordService(obj); 
     console.log(obj);

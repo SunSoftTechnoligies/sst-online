@@ -22,3 +22,7 @@ export const getprofileService = (data) => privateReq.post("/collection/get-prof
 
 export const getinternService = (data) => privateReq.post("/collection/get-intern-collection", data);
 
+export const blockinternService=(data)=>publicReq.post("/admin/block-intern",data);
+
+export const resumeinternService=(data)=>publicReq.post("/admin/resume-intern",data);
+

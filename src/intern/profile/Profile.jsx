@@ -23,17 +23,6 @@ function Profile() {
     // picFileName: '',
   });
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    console.log(token);
-    const decodedToken = token ? JSON.parse(atob(token.split('.')[1])) : null;
-    if (decodedToken && decodedToken.email) {
-      setObj((prevObj) => ({
-        ...prevObj,
-        email: decodedToken.email,
-      }));
-    }
-  }, []);
 
   const [picPreview, setPicPreview] = useState(null);
 

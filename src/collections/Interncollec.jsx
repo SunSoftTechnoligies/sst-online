@@ -35,6 +35,7 @@ function Interncollec() {
                 <th className="py-2 px-4 border-b">Duration</th>
                 <th className="py-2 px-4 border-b">Enroll Date</th>
                 <th className="py-2 px-4 border-b">End Date</th>
+                <th className="py-2 px-4 border-b">Timeline</th>
                 <th className="py-2 px-4 border-b">Status</th>
                 <th className="py-2 px-4 border-b">Date of Submission</th>
               </tr>
@@ -43,8 +44,8 @@ function Interncollec() {
               {interns.map((intern) => {
                 const currentDate = new Date();
                 const endDate = new Date(intern.enddate);
-                const status = currentDate <= endDate ? "Active" : "Time Period Over";
-                const statusColor = status === "Active" ? "text-green-600" : "text-red-600";
+                const timeline = currentDate <= endDate ? "Active" : "Time Period Over";
+                const timelineColor = timeline === "Active" ? "text-green-600" : "text-red-600";
 
                 return (
                   <tr key={intern._id}>
@@ -56,7 +57,8 @@ function Interncollec() {
                     <td className="py-2 px-4 border-b">{intern.duration}</td>
                     <td className="py-2 px-4 border-b">{new Date(intern.enrolldate).toLocaleDateString('en-GB')}</td>
                     <td className="py-2 px-4 border-b">{new Date(intern.enddate).toLocaleDateString('en-GB')}</td>
-                    <td className={`py-2 px-4 border-b font-bold ${statusColor}`}>{status}</td>
+                    <td className={`py-2 px-4 border-b font-bold ${timelineColor}`}>{timeline}</td>
+                    <td className="py-2 px-4 border-b">{intern.Status}</td> 
                     <td className="py-2 px-4 border-b">{new Date(intern.dos).toLocaleDateString('en-GB')}</td>
                   </tr>
                 );

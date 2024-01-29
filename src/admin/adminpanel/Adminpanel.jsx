@@ -3,6 +3,7 @@ import Adminpannav from './navbar/Adminpannav';
 import Enrollcard from './cards/Enrollcard';
 import Allinterncard from './cards/Allinterncard';
 import Reportingcard from './cards/Reportingcard';
+import HandleInterncard from './cards/Handleinterncard';
 
 function Adminpanel() {
 
@@ -26,6 +27,11 @@ function Adminpanel() {
         <div className="flex-shrink-0 w-full md:w-1/3">
           <Reportingcard />
         </div>
+
+        {/* Card 4:Handle Intern */}
+        {/* <div className="flex-shrink-0 w-full md:w-1/3">
+          < HandleInterncard/>
+        </div> */}
       </div>
     </div>
   );
