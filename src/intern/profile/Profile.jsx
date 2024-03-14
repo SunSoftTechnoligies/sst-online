@@ -27,6 +27,25 @@ function Profile() {
   const [picPreview, setPicPreview] = useState(null);
 
   useEffect(() => {
+    // Get internid from local storage
+    const internid = localStorage.getItem('internid');
+
+    // Fetch intern data
+    getinterndataService({ internid })
+      .then((res) => {
+        if (res.data && res.data.email) {
+          setObj((prevObj) => ({
+            ...prevObj,
+            email: res.data.email,
+          }));
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching intern data:', error);
+      });
+  }, []);
+
+  useEffect(() => {
     if (!obj.email) {
       return;
     }
@@ -233,6 +252,7 @@ function Profile() {
                         readOnly
                         autoComplete="email"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 focus:caret-indigo-600"
+                      required
                       />
                     </div>
                   </div>
@@ -252,6 +272,7 @@ function Profile() {
                           onChange={doInputChange}
                           autoComplete="name"
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                          required
                         />
                       </div>
                     </div>
@@ -268,7 +289,8 @@ function Profile() {
                           value={obj.contact}
                           onChange={doInputChange}
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        />
+                          required
+                     />
                       </div>
                     </div>
                   </div>
@@ -287,6 +309,7 @@ function Profile() {
                         onChange={doInputChange}
                         autoComplete="street-address"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        required
                       />
                     </div>
                   </div>
@@ -305,6 +328,7 @@ function Profile() {
                           onChange={doInputChange}
                           list="universityList"
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-md sm:text-sm sm:leading-6"
+                          required
                         />
                         <datalist id="universityList">
                           {indianTechUniversities.map((university) => (
@@ -326,6 +350,7 @@ function Profile() {
                           onChange={doInputChange}
                           autoComplete="address-level2"
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                          required
                         />
                       </div>
                     </div>
@@ -344,6 +369,7 @@ function Profile() {
                           value={obj.course}
                           onChange={doInputChange}
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-md sm:text-sm sm:leading-6"
+                          required
                         >
                           <option>Select your Degree</option>
                           <option>Bachelor's in Computer Science</option>
@@ -412,6 +438,7 @@ function Profile() {
                                 width="300px"
                                 height="300px"
                                 id="resume-preview"
+                                required
                               />
                             </div>
                           )}
@@ -462,6 +489,7 @@ function Profile() {
                       name="pic"
                       accept=".jpg, .jpeg, .png, .webp"
                       style={{ display: 'none' }}
+                      required
                       onChange={(e) => {
                         doPicInputChange(e);
                         doPicPreview(e);
@@ -483,6 +511,7 @@ function Profile() {
                 <button
                   className="inline-flex items-center rounded-md bg-blue-50 px-6 py-3 text-sm font-medium text-blue-700 hover:bg-blue-100 focus:outline-none focus:ring focus:border-blue-300"
                   onClick={doUpdateProfile}
+                  
                 >
                   Update
                 </button>

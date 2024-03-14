@@ -27,7 +27,9 @@ function Loginintern() {
       // Check the message in the response
       if (res.data.message === 'Intern logged in successfully') {
         localStorage.setItem('token', JSON.stringify(res.data.token));
-        console.log("Token added to local storage");
+        // Store internid in local storage
+        localStorage.setItem('internid', obj.internid);
+        console.log("Token and internid added to local storage");
         navigate('/intern/interndashboard');
       } else if (res.data.message === 'Your internship period is over') {
         console.log("Internship period is over");
